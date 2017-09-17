@@ -21,6 +21,7 @@ function inkJSNeedsUpdating() {
 }
 
 app.on('will-finish-launching', function () {
+    electron.app.setAppUserModelId("com.inklestudios.inky");
     app.on("open-file", function (event, path) {
         ProjectWindow.open(path);
         event.preventDefault();
